@@ -1,0 +1,159 @@
+= 接口服务文档
+
+
+[[_overview]]
+== Overview
+接口服务文档
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : 1.0
+
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost:9090
+__BasePath__ : /swagger
+
+
+=== Tags
+
+* 城市 : 城市
+
+
+
+
+[[_paths]]
+== Paths
+
+[[_gettestusingget]]
+=== 根据id查询城市名称
+....
+GET /yss/get
+....
+
+
+==== Description
+根据id查询城市名称
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**城市id** +
+__optional__|id|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|string
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 城市
+
+
+[[_posttestusingpost]]
+=== 城市简介
+....
+POST /yss/post
+....
+
+
+==== Description
+城市简介
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**cityIO** +
+__required__|cityIO|<<_d2c342c7442f02efef4e8f7e17f8bf6c,CityIO参数说明>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_cc4b414641620c8ff2cf329f4483c04a,CityResult参数说明>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 城市
+
+
+
+
+[[_definitions]]
+== Definitions
+
+[[_d2c342c7442f02efef4e8f7e17f8bf6c]]
+=== CityIO参数说明
+CityIO参数说明
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|城市id|string
+|**position** +
+__optional__|城市位于南方北方 1/南方 2/北方|string
+|===
+
+
+[[_cc4b414641620c8ff2cf329f4483c04a]]
+=== CityResult参数说明
+CityResult参数说明
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**cityName** +
+__optional__|城市名称|string
+|**message** +
+__optional__|城市说明|string
+|===
+
+
+
+
+
